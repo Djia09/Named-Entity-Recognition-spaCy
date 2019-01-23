@@ -10,5 +10,5 @@ The model testing was done to CoNLL-2003 dataset test A and test B.
 | Accuracy score | 0.97 | 0.95 |
 | Precision | 0.88 | 0.80 |
 | Recall | 0.86 | 0.80 |
-**| F1 score | 0.87 | 0.80 |**
+| **F1 score** | **0.87** | **0.80** |
 
