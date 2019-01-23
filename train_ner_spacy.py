@@ -18,15 +18,36 @@ import spacy
 from spacy.util import minibatch, compounding
 import time
 from conllToSpacy import main
-TRAIN_DATA = main('./CoNLL-2003/eng.train')
+import argparse
+import sys
 
-output_dir = './Model/first_full_32_notAdd_UP'
+# Parsing argument for command-line.
+parser = argparse.ArgumentParser(description="Training an NER model with SpaCy.")
+parser.add_argument("-tp", "--train_path", help="Path to CoNLL train dataset.")
+parser.add_argument("-output", "--output_path", help="Path where to save the output model.")
+parser.add_argument("-n", "--n_iter", help="Number of epochs for training", type=int)
+args = parser.parse_args()
 
-@plac.annotations(
-    model=("Model name. Defaults to blank 'en' model.", "option", "m", str),
-    output_dir=("Optional output directory", "option", "o", Path),
-    n_iter=("Number of training iterations", "option", "n", int))
-def main(model=None, output_dir=output_dir, n_iter=32):
+if args.train_path:
+    TRAIN_DATA = main(args.train_path)
+    print("Got train data at", args.train_path)
+else:
+    print("No training data path given ! Interrupting the script...")
+    sys.exit()
+if args.output_path:
+    output_dir = args.output_path
+    print("Model will be saved at", output_dir)
+else:
+    print("No output path given ! The model will be saved in a folder called ./Model.")
+    output_dir = "./Model/first_full_32_notAdd_UP"
+if args.n_iter:
+    n_iter = args.n_iter
+    print("Number of iterations chosen: ", n_iter)
+else:
+    print("Default number of iterations given: 16")
+    n_iter = 16
+
+def main(model=None, output_dir=output_dir, n_iter=n_iter):
     """Load the model, set up the pipeline and train the entity recognizer."""
     if model is not None:
         nlp = spacy.load(model)  # load existing spaCy model
@@ -79,5 +100,5 @@ def main(model=None, output_dir=output_dir, n_iter=32):
 
 START = time.time()
 if __name__ == '__main__':
-    plac.call(main)
+    main(model=None, output_dir=output_dir, n_iter=n_iter)
 print('Done in %fs' % (time.time()-START))
