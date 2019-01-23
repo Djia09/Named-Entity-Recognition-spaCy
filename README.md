@@ -4,7 +4,7 @@ This is the implementation of a Named-Entity-Recognition model using [SpaCy](htt
 # Results
 The model testing was done to CoNLL-2003 dataset test A and test B.
 
-| Test A  | Test B |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| | Test A  | Test B |
+| -- | ------------- | ------------- |
+| Random accuracy score | Content Cell  | Content Cell  |
+| Accuracy score | Content Cell  | Content Cell  |
