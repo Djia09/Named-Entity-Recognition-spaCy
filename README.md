@@ -63,11 +63,11 @@ sent = ["I", "go", "to", "Harvard", "University", "in", "the", "USA".]
 y_true = ["O", "O", "O", "ORG", "ORG", "O", "O", "LOC"]
 y_pred = ["O", "O", "O", "LOC", "O", "O", "O", "LOC"]
 ```
-Random accuracy will be: 5/8 = 0.625
-Accuracy score will be: 6/8 = 0.75 
-Precision will be: 1/2 = 0.50 (LOC and LOC from y_pred)
-Recall will be: 1/3 = 0.33 (ORG, ORG and LOC from y_true)
-F1 score will be: 2*1/2*1/3 / (1/2 + 1/3) = 0.40
+* Random accuracy will be: 5/8 = 0.625
+* Accuracy score will be: 6/8 = 0.75 
+* Precision will be: 1/2 = 0.50 (LOC and LOC from y_pred)
+* Recall will be: 1/3 = 0.33 (ORG, ORG and LOC from y_true)
+* F1 score will be: 2*1/2*1/3 / (1/2 + 1/3) = 0.40
 
 ## Author
 David JIA
