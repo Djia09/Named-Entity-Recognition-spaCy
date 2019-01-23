@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf8
-"""Example of training spaCy's named entity recognizer, starting off with an
-existing model or a blank model.
-
+"""
 For more details, see the documentation:
 * Training: https://spacy.io/usage/training
 * NER: https://spacy.io/usage/linguistic-features#named-entities
