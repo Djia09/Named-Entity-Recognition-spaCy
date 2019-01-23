@@ -6,5 +6,7 @@ The model testing was done to CoNLL-2003 dataset test A and test B.
 
 | | Test A  | Test B |
 | -- | ------------- | ------------- |
-| Random accuracy score | Content Cell  | Content Cell  |
-| Accuracy score | Content Cell  | Content Cell  |
+| Random accuracy score | 0.83 | 0.82 |
+| Precision | 0.88 | 0.80 |
+| Recall | 0.86  | 0.80 |
+| F1 score | 0.87  | 0.80 |
